@@ -37,3 +37,15 @@ def find_top_student(students):
     if not students:
         return None
     return max(students, key=lambda s: s.score)
+
+
+def iterate_scores(students):
+    """Demonstrates iter() and next() by manually stepping through scores."""
+    scores_iter = iter([s.score for s in students])
+    result = []
+    while True:
+        try:
+            result.append(next(scores_iter))
+        except StopIteration:
+            break
+    return result

@@ -82,7 +82,11 @@ def grade_with_custom_pass_mark():
 
 def show_environment_and_date_report():
     print(environment_report())
-    print(date_report())
+    target = input("Enter a future date (YYYY-MM-DD) to count days until, or press Enter to skip: ").strip()
+    if target:
+        print(date_report(target))
+    else:
+        print(date_report())
 
 
 def export_report():
